@@ -1,8 +1,7 @@
 import { Injectable } from "@angular/core";
 import { PlantInventoryEntry, Query } from "app/sales/definitions";
 import { Http, URLSearchParams} from "@angular/http";
-
-// http://localhost:3000/api/inventory/plants
+import { environment } from "environments/environment"
 
 @Injectable()
 export class PlantCatalogService {
@@ -21,7 +20,7 @@ export class PlantCatalogService {
             params.set('endDate', query.endDate.toString());
 
         this.http
-            .get('http://localhost:3000/api/inventory/plants', {search: params})
+            .get(environment.RENTIT_BASE_URL + '/api/inventory/plants', {search: params})
             .subscribe(response => this.plants = response.json());
     }
 }

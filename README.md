@@ -8,6 +8,16 @@ Specification and requirements
  * https://courses.cs.ut.ee/MTAT.03.229/2017_spring/uploads/Main/2017Project.pdf
 
 
+# Start project
+
+# Development environment
+
+    npm start
+
+# Prod environment
+
+    npm run start-prod
+
 # Docker
 
 Pull Image
