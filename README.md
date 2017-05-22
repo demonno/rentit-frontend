@@ -8,6 +8,23 @@ Specification and requirements
  * https://courses.cs.ut.ee/MTAT.03.229/2017_spring/uploads/Main/2017Project.pdf
 
 
+# Docker
+
+Pull Image
+
+    docker pull demonno/rentit-frontend
+
+Run Container
+
+    docker-compose up
+
+Docker build steps
+
+    ng build --environment=prod
+    docker build -t demonno/rentit-frontend .
+    docker push demonno/rentit-frontend
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
 ## Development server
