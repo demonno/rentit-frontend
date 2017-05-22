@@ -1,0 +1,40 @@
+<ul class="nav nav-tabs nav-justified">
+    <li [ngClass]="{active: isQueryTabActive}" (click)="selectTab(1)"><a><span>1.</span>  Query Catalog</a></li>
+    <li [ngClass]="{active: isSelectionTabActive}" (click)="selectTab(2)"><a><span>2.</span>  Select Plant</a></li>
+    <li [ngClass]="{active: isReviewTabActive}" (click)="selectTab(3)"><a><span>3.</span>  Review PHR</a></li>
+</ul>
+
+<div class="col-xs-12" style="height:50px;"></div>
+
+<div class="tab-content">
+
+    <div class="tab-pane" [ngClass]="{active: isQueryTabActive}">
+        <!-- ===========================
+             Query Component TAB-PANE
+             =========================== -->
+        <query-form (executeEventQuery)='executeQuery($event)'></query-form>
+    </div>
+
+    <div id="selection-tab" class="tab-pane" [ngClass]="{active: isResultTabActive}">
+        <div>
+            <button class="btn btn-warning col-sm-3" (click)="backToQueryTab()">
+                <span class="glyphicon glyphicon-chevron-left"></span> Query plant catalog again
+            </button>
+            <span class="col-sm-6"></span>
+            <button class="btn btn-primary col-sm-3 disabled">
+                Review plant hire request <span class="glyphicon glyphicon-chevron-right"></span>
+            </button>
+        </div>
+        <div class="col-xs-12" style="height:20px;"></div>
+        <!-- ===========================
+             Selection Component TAB-PANE
+             =========================== -->
+        <query-result (selectPlant)='selectPlant($event)'></query-result>
+    </div>
+    <div id="review-tab" class="tab-pane" [ngClass]="{active: isSummaryTabActive}">
+        <!-- ===========================
+             Overview Component TAB-PANE
+             =========================== -->
+        <order-summary [order]='requisitionService.order' (createPO)='requisitionService.createPurchaseOrder()'></order-summary>
+    </div>
+</div>
