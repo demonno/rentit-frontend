@@ -17,15 +17,18 @@ import { PlantSearchService } from "app/sales/search/plant-search.service";
 import { OrderSummaryComponent } from "app/sales/requisition/order-summary.component";
 import {DeliveryComponent} from "app/sales/delivery/delivery.component";
 import {DeliveryService} from "app/sales/delivery/delivery-service";
+import { AuthenticationComponent } from './authentication/authentication.component';
+import {AuthenticationService} from "app/authentication/authentication.service"
 
 const appRoutes: Routes = [
   {path: 'query', component: RequisitionComponent},
   {path: 'orders', component: OrdersComponent},
   {path: 'search', component: SearchComponent},
   {path: 'delivery', component: DeliveryComponent },
+  {path: 'login', component: AuthenticationComponent },
   {
     path: '',
-    redirectTo: 'query',
+    redirectTo: 'login',
     pathMatch: 'full'
   }
 ];
@@ -39,7 +42,8 @@ const appRoutes: Routes = [
     OrderSummaryComponent,
     OrdersComponent,
     SearchComponent,
-    DeliveryComponent
+    DeliveryComponent,
+    AuthenticationComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -52,7 +56,8 @@ const appRoutes: Routes = [
     RequisitionService,
     OrderCatalogService,
     PlantSearchService,
-    DeliveryService
+    DeliveryService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })
