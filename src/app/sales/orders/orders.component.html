@@ -1,0 +1,22 @@
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th class="text-center">Plant Name</th>
+            <th class="text-center">Plant Description</th>
+            <th class="text-center">Plant Price</th>
+            <th class="text-center">Order Status</th>
+            <th class="text-center">Start Date</th>
+            <th class="text-center">End Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let po of catalog.pos">
+            <td>{{po.plant.name}}</td>
+            <td>{{po.plant.description}}</td>
+            <td>{{po.plant.price}}</td>
+            <td>{{po.status}}</td>
+            <td>{{po.rentalPeriod.startDate}}</td>
+            <td>{{po.rentalPeriod.endDate}}</td>
+        </tr>
+    </tbody>
+</table>

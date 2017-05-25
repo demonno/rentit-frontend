@@ -1,10 +1,12 @@
 export class Query {
+  id: string;
   name: string;
   startDate: Date;
   endDate: Date;
 }
 
 export class PlantInventoryEntry {
+    _id: number;
     name: string;
     description: string;
     price: number;
@@ -21,8 +23,18 @@ export class BusinessPeriod {
 }
 
 export class PurchaseOrder {
+  _id: number;
+  address: string;
+  email: string;
   plant: PlantInventoryEntry;
   rentalPeriod: BusinessPeriod;
   total: number;
   status: string;
+}
+
+export class PurchaseOrderDTO {
+  _id: number;
+  address: string;
+  email: string;
+  rentalPeriod: BusinessPeriod;
 }

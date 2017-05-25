@@ -9,11 +9,17 @@ import { PlantCatalogService } from "app/sales/requisition/plant-catalog.service
 import { QueryResultComponent } from "app/sales/requisition/query-result.component";
 import { QueryFormComponent } from "app/sales/requisition/query-form.component";
 import { RequisitionComponent } from "app/sales/requisition/requisition.component";
+import { OrdersComponent } from "app/sales/orders/orders.component";
+import { SearchComponent } from "app/sales/search/search.component";
 import { RequisitionService } from "app/sales/requisition/requisition.service";
+import { OrderCatalogService } from "app/sales/orders/orders-catalog.service";
+import { PlantSearchService } from "app/sales/search/plant-search.service";
 import { OrderSummaryComponent } from "app/sales/requisition/order-summary.component";
 
 const appRoutes: Routes = [
   {path: 'query', component: RequisitionComponent},
+  {path: 'orders', component: OrdersComponent},
+  {path: 'search', component: SearchComponent},
   // {path: 'delivery', component: InvoicesComponent },
   {
     path: '',
@@ -28,7 +34,9 @@ const appRoutes: Routes = [
     QueryResultComponent,
     QueryFormComponent,
     RequisitionComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    OrdersComponent,
+    SearchComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -38,7 +46,9 @@ const appRoutes: Routes = [
   ],
   providers: [
     PlantCatalogService,
-    RequisitionService
+    RequisitionService,
+    OrderCatalogService,
+    PlantSearchService
   ],
   bootstrap: [AppComponent]
 })
