@@ -5,6 +5,27 @@ export class Query {
   endDate: Date;
 }
 
+export class PlantInventoryEntryDTO {
+    _id: string;
+    name: string;
+    description: string;
+    price: number;
+
+}
+
+export class PlantInventoryItemDTO {
+    _id: string;
+    serialNumber: string;
+    equipmentCondition: string;
+    plantInventoryentryDTO: PlantInventoryEntryDTO 
+}
+
+
+export class PlantReservationDTO {
+  rentalPeriod: BusinessPeriod;
+  plantInventoryItemDTO: PlantInventoryItemDTO
+}
+
 export class PlantInventoryEntry {
     _id: number;
     name: string;

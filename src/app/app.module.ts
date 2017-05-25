@@ -15,12 +15,14 @@ import { RequisitionService } from "app/sales/requisition/requisition.service";
 import { OrderCatalogService } from "app/sales/orders/orders-catalog.service";
 import { PlantSearchService } from "app/sales/search/plant-search.service";
 import { OrderSummaryComponent } from "app/sales/requisition/order-summary.component";
+import {DeliveryComponent} from "app/sales/delivery/delivery.component";
+import {DeliveryService} from "app/sales/delivery/delivery-service";
 
 const appRoutes: Routes = [
   {path: 'query', component: RequisitionComponent},
   {path: 'orders', component: OrdersComponent},
   {path: 'search', component: SearchComponent},
-  // {path: 'delivery', component: InvoicesComponent },
+  {path: 'delivery', component: DeliveryComponent },
   {
     path: '',
     redirectTo: 'query',
@@ -36,7 +38,8 @@ const appRoutes: Routes = [
     RequisitionComponent,
     OrderSummaryComponent,
     OrdersComponent,
-    SearchComponent
+    SearchComponent,
+    DeliveryComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -48,7 +51,8 @@ const appRoutes: Routes = [
     PlantCatalogService,
     RequisitionService,
     OrderCatalogService,
-    PlantSearchService
+    PlantSearchService,
+    DeliveryService
   ],
   bootstrap: [AppComponent]
 })

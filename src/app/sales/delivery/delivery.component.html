@@ -1,0 +1,40 @@
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="rental-start-date" class="col-sm-3 control-label">Start date</label>
+        <div class="col-sm-7">
+            <!-- query.startDate -->
+            <input type="date" class="form-control" name="rental-start-date" [(ngModel)]="query.startDate">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-3">
+            <!-- executeQueryEvent.emit(query) -->
+            <button id="submit-button" class="btn btn-primary btn-block" 
+                    (click)="search(query)">
+                <span class="glyphicon glyphicon-search"></span> Submit query
+            </button>
+        </div>
+    </div>
+        <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-6">
+            <table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th class="text-center">Serial NUmber</th>
+            <th class="text-center">Condition</th>
+            <th class="text-center">Plant name</th>
+            <th class="text-center">Plant description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let plant of catalog.plantReservations">
+            <td>{{plant.item.serialNumber}}</td>
+            <td>{{plant.item.condition}}</td>
+            <td class="text-right">{{plant.item.plant.name}}</td>
+            <td class="text-right">{{plant.item.plant.description}}</td>
+        </tr>
+    </tbody>
+            </table>
+        </div>
+    </div>
+</form>
