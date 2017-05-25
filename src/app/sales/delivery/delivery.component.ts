@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { DeliveryService } from "app/sales/delivery/delivery-service";
+import { AuthenticationService } from "app/authentication/authentication.service";
 import { Query } from "app/sales/definitions";
 
 @Component({
@@ -14,9 +15,13 @@ import { Query } from "app/sales/definitions";
 
 
 export class DeliveryComponent {
+constructor(private catalog: DeliveryService, private auth: AuthenticationService){}
     query: Query = new Query();
 
-constructor(private catalog: DeliveryService){}
+    ngOnInit(){
+        this.auth.checkCredentials();
+    }
+
 
  search(query: Query): void {
      this.catalog.executeQuery(query);

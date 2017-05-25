@@ -7,15 +7,16 @@ import {AuthenticationService} from "app/authentication/authentication.service"
   <input type="text" [(ngModel)]="username">
   <input type="password" [(ngModel)]="password">  
   <button (click)="login()"> Login </button>
+  <div>{{authentication.message}}</div>
   `
 })
 
 export class AuthenticationComponent {
   username: string;
   password: string;
-  constructor(private autehtication: AuthenticationService) {}
+  constructor(private authentication: AuthenticationService) {}
   login() {
     console.log("Trying to login...");
-    this.autehtication.login(this.username,this.password);
+    this.authentication.login(this.username,this.password);
   }
 }

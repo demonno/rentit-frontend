@@ -19,10 +19,10 @@ export class DeliveryService {
         let headers = new Headers();
         headers.append("Authorization", "Basic c2VjdXJlOnNlY3VyZQ==");
 
-        let options = new RequestOptions({ headers: headers });
+        let options = new RequestOptions({ headers: headers, params: params });
 
         this.http
-            .get(environment.RENTIT_BASE_URL + '/api/inventory/reservations', {params: params})
+            .get(environment.RENTIT_BASE_URL + '/api/inventory/reservations',options)
             .subscribe(response => {
             this.plantReservations = response.json();
             console.log(this.plantReservations);

@@ -14,6 +14,7 @@ export class User {
 
 @Injectable()
 export class AuthenticationService {
+  message: string;
   constructor(private http: Http, private _router: Router) {}
 
   login(username: string, password: string){
@@ -22,8 +23,11 @@ export class AuthenticationService {
         if(result.username != null && result.username != undefined) {
           localStorage.setItem("user",result.username);
           localStorage.setItem("role",result.role);
+          this._router.navigate(['query']);
+        }else {
+            this.message = "Incorrect Username or Password";
         }
-      })
+      }, error =>  this.message = <any>error)
   }
 
 
@@ -52,7 +56,8 @@ export class AuthenticationService {
 
   logout() {
     localStorage.removeItem("user");
-    this._router.navigate(['Login']);
+    localStorage.removeItem("role");
+    this._router.navigate(['login']);
   }
  
 
