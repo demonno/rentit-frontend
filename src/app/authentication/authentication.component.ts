@@ -15,8 +15,7 @@ export class AuthenticationComponent {
   password: string;
   constructor(private autehtication: AuthenticationService) {}
   login() {
-    console.log("Hurras ...")
-    this.autehtication.authenticate(this.username, this.password)
-      .subscribe()
+    console.log("Trying to login...");
+    this.autehtication.login(this.username,this.password);
   }
 }
