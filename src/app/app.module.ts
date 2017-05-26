@@ -33,7 +33,7 @@ const appRoutes: Routes = [
   {path: 'login', component: AuthenticationComponent },
   {path: 'maintenance', component: MaintenanceComponent },
   {path: 'maintenance/plans', component: MaintenancePlansViewComponent },
-  {path: 'plan-maintenance/:id/:href', component: MaintenancePlansViewComponent },
+  {path: 'plan-maintenance/:id/:href', component: PlanMaintenanceComponent },
   {
     path: '',
     redirectTo: 'login',
