@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { RequestOptions, Headers, Http } from "@angular/http";
 import {Router} from '@angular/router';
+import { environment } from "environments/environment";
 
 
 import "rxjs/add/operator/map";
@@ -34,7 +35,7 @@ export class AuthenticationService {
   authenticate(username: string, password: string) {
       localStorage.setItem('code', btoa(username + ':' + password));
       const options = new RequestOptions({headers: this.headers()});
-      let request =  this.http.get('http://localhost:3000/api/auth',options)
+      let request =  this.http.get(environment.MAINTENANCE_BASE_URL+ '/api/auth',options)
         .map(response => response.json());
       return request;
     }
