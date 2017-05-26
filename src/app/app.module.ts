@@ -22,6 +22,8 @@ import {AuthenticationService} from "app/authentication/authentication.service"
 import {MaintenanceService} from "app/maintenance/maintenance-service";
 import {MaintenanceComponent} from "app/maintenance/maintenance.component";
 import {PlanMaintenanceComponent} from "app/maintenance/plan-maintenance.component";
+import {MaintenancePlansViewComponent} from "app/maintenance/plans/view/maintenance-plans-view"
+import {MaintenancePlanService} from "app/maintenance/plans/maintenance-plan-service"
 
 const appRoutes: Routes = [
   {path: 'query', component: RequisitionComponent},
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
   {path: 'delivery', component: DeliveryComponent },
   {path: 'login', component: AuthenticationComponent },
   {path: 'maintenance', component: MaintenanceComponent },
-  {path: 'plan-maintenance/:id/:href', component: PlanMaintenanceComponent },
+  {path: 'maintenance/plans', component: MaintenancePlansViewComponent },
+  {path: 'plan-maintenance/:id/:href', component: MaintenancePlansViewComponent },
   {
     path: '',
     redirectTo: 'login',
@@ -50,7 +53,8 @@ const appRoutes: Routes = [
     DeliveryComponent,
     AuthenticationComponent,
     MaintenanceComponent,
-    PlanMaintenanceComponent
+    PlanMaintenanceComponent,
+    MaintenancePlansViewComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -65,7 +69,8 @@ const appRoutes: Routes = [
     PlantSearchService,
     DeliveryService,
     AuthenticationService,
-    MaintenanceService
+    MaintenanceService,
+    MaintenancePlanService
   ],
   bootstrap: [AppComponent]
 })
