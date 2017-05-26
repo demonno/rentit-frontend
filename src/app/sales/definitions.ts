@@ -8,10 +8,11 @@ export class Query {
 export class MaintenanceQuery {
   plantHref: string;
   plantId: string;
-  startDate: Date;
-  endDate: Date;
+  maintenancePeriod:BusinessPeriod;
   description: string;
   price:string;
+  startDate: Date;
+  endDate: Date;
 }
 
 export class PlantInventoryEntryDTO {

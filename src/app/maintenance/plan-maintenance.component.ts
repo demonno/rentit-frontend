@@ -22,6 +22,10 @@ export class PlanMaintenanceComponent {
     maintenanceQuery: MaintenanceQuery = new MaintenanceQuery();
 
 
+ submit(query:MaintenanceQuery){
+     this.catalog.submitMaintenance(query);
+ }
+
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       this.maintenanceQuery.plantId = params['id'];

@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
   RENTIT_BASE_URL: "http://localhost:3000",
-  MAINTENANCE_BASE_URL: "http://193.40.11.150:8090"
+  MAINTENANCE_BASE_URL: "http://193.40.11.150:8090"  
 };
