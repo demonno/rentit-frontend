@@ -7,6 +7,7 @@ import { environment } from "environments/environment"
 export class OrderCatalogService {
 
     pos: Array<PurchaseOrder> = [];
+    po: PurchaseOrder;
 
     constructor(private http: Http){}
 
@@ -16,6 +17,16 @@ export class OrderCatalogService {
             .get(environment.RENTIT_BASE_URL + '/api/sales/orders')
             .subscribe(response => {
             this.pos = response.json();
+            });
+    }
+
+    getPo(id:string){
+                console.log("EXECUTING========");
+        this.http
+            .get(environment.RENTIT_BASE_URL + '/api/sales/orders/'+id)
+            .subscribe(response => {
+                console.log(response.json());
+            this.po = response.json();
             });
     }
 }

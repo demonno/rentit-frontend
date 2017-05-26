@@ -23,7 +23,8 @@ export class PlantInventoryItemDTO {
 
 export class PlantReservationDTO {
   rentalPeriod: BusinessPeriod;
-  plantInventoryItemDTO: PlantInventoryItemDTO
+  plantInventoryItemDTO: PlantInventoryItemDTO;
+  poId;
 }
 
 export class PlantInventoryEntry {
@@ -44,7 +45,7 @@ export class BusinessPeriod {
 }
 
 export class PurchaseOrder {
-  _id: number;
+  _id: string;
   address: string;
   email: string;
   plant: PlantInventoryEntry;

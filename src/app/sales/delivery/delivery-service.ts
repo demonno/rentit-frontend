@@ -9,6 +9,14 @@ export class DeliveryService {
 
     constructor(private http: Http){}
 
+    dispatch(id:string,action:string){
+        this.http
+            .post(environment.RENTIT_BASE_URL + '/api/inventory/reservations/'+id+'/'+action,null)
+            .subscribe(response => {
+            console.log(response);
+            });
+    }
+
     executeQuery(query: Query) {
         console.log("EXECUTING========");
         console.log(query);

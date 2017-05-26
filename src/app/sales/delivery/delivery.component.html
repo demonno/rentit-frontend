@@ -16,7 +16,8 @@
         </div>
     </div>
         <div class="form-group">
-        <div class="col-sm-offset-3 col-sm-6">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-6">
             <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -24,6 +25,7 @@
             <th class="text-center">Condition</th>
             <th class="text-center">Plant name</th>
             <th class="text-center">Plant description</th>
+            <th class="text-center">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -32,9 +34,29 @@
             <td>{{plant.item.condition}}</td>
             <td class="text-right">{{plant.item.plant.name}}</td>
             <td class="text-right">{{plant.item.plant.description}}</td>
+            <td class="text-right"><button  class="btn btn-primary" (click)="viewDetails(plant.poId,plant._id)">details</button></td>
+            
         </tr>
     </tbody>
             </table>
+        </div>
+        <div *ngIf="order.po" class="col-md-4">
+           <table class="table"> 
+               <thead>
+                   <tr>
+                       <th>Status</th>
+                       <th>Action</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr>
+                       <td>{{order.po.status}}</td>
+                       <td><select class="form-control" (change)="onChange($event.target.value)">
+                                    <option *ngFor="let i of statuses">{{i}}</option>
+                            </select></td>
+               </tbody>
+           </table>
+        </div>
         </div>
     </div>
 </form>
