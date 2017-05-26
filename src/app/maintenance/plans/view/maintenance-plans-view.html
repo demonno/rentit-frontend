@@ -1,0 +1,22 @@
+<div>
+  <span><button class="btn btn-primary" (click)="backToHomepage()">
+    Back to homepage
+  </button></span>
+  <span><button class="btn btn-primary" (click)="refresh()">Refresh</button></span>
+</div>
+<div>
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>Year of action</th>
+      <th>Href</th>
+      <th>Number of Tasks</th>
+    </tr>
+    </thead>
+    <tr *ngFor="let phr of maintenanceService.maintenancePlans">
+      <td>{{phr.yearOfAction || 'NA'}}</td>
+      <td>{{phr.plantHref || 'NA'}}</td>
+      <td>{{phr.maintenanceTasks.length || 'NA'}}</td>
+    </tr>
+  </table>
+</div>
