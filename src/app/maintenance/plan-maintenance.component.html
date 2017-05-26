@@ -1,0 +1,48 @@
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="maintenance-plantId" class="col-sm-3 control-label">Plant Id</label>
+        <div class="col-sm-7">
+
+            <input type="text" class="form-control" name="maintenance-plantId" [(ngModel)]="maintenanceQuery.plantId">
+        </div>
+    </div>
+        <div class="form-group">
+        <label for="maintenance-period-start" class="col-sm-3 control-label">Start Date</label>
+        <div class="col-sm-7">
+
+            <input type="date" class="form-control" name="maintenance-period-start" [(ngModel)]="maintenanceQuery.startDate">
+        </div>
+    </div>
+            <div class="form-group">
+        <label for="maintenance-period-end" class="col-sm-3 control-label">End Date</label>
+        <div class="col-sm-7">
+
+            <input type="date" class="form-control" name="maintenance-period-end" [(ngModel)]="maintenanceQuery.endDate">
+        </div>
+    </div>
+                <div class="form-group">
+        <label for="maintenance-period-end" class="col-sm-3 control-label">Description</label>
+        <div class="col-sm-7">
+
+            <input type="text" class="form-control" name="description" [(ngModel)]="maintenanceQuery.description">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="maintenance-period-end" class="col-sm-3 control-label">Price</label>
+        <div class="col-sm-7">
+            <input type="text" class="form-control" name="price" [(ngModel)]="maintenanceQuery.price">
+           
+        </div>
+         <input type="hidden" class="form-control" name="plantHref" [(ngModel)]="maintenanceQuery.plantHref">
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-3">
+
+            <button id="submit-button" class="btn btn-primary btn-block" 
+                    (click)="search(query)">
+                <span class="glyphicon glyphicon-search"></span> Submit Maintenance
+            </button>
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)="backToList()">Back to List</button>
+</form>

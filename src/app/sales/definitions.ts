@@ -5,6 +5,15 @@ export class Query {
   endDate: Date;
 }
 
+export class MaintenanceQuery {
+  plantHref: string;
+  plantId: string;
+  startDate: Date;
+  endDate: Date;
+  description: string;
+  price:string;
+}
+
 export class PlantInventoryEntryDTO {
     _id: string;
     name: string;

@@ -1,0 +1,23 @@
+
+
+<div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Condition</th>
+                <th>Serioal Number</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let plant of catalog.plantItems">
+                <td>{{plant.condition}}</td>
+                <td>{{plant.serialNumber}}</td>
+                <td>{{plant.plant.name}}</td>
+                <td><button class="btn btn-danger" *ngIf="plant.condition=='UNSERVICEABLE_REPAIRABLE'" (click)="maintenance(plant._id,plant.plant._links.self.href)">Maintenance</button></td>
+        </tbody>
+    </table>
+
+</div>
